@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GWA Calculator — Air's University</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- PyScript -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.3/core.css">
+  <script type="module" src="https://pyscript.net/releases/2025.7.3/core.js"></script>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner container">
+      <div class="brand">Air's University of Mandaluyong</div>
+      <nav class="main-nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="clubs.html">Clubs</a>
+        <a class="nav-link active" href="gwa.html">GWA Calculator</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page">
+    <div class="card container">
+      <h1>GWA Calculator</h1>
+
+      <label>First Name</label>
+      <input type="text" id="first_name" placeholder="First name">
+
+      <label>Last Name</label>
+      <input type="text" id="last_name" placeholder="Last name">
+
+      <div class="grades-grid">
+        <div>
+          <label>Science</label>
+          <input type="number" id="science" placeholder="e.g. 88">
+        </div>
+        <div>
+          <label>Math</label>
+          <input type="number" id="math" placeholder="e.g. 90">
+        </div>
+        <div>
+          <label>English</label>
+          <input type="number" id="english" placeholder="e.g. 92">
+        </div>
+        <div>
+          <label>Filipino</label>
+          <input type="number" id="filipino" placeholder="e.g. 85">
+        </div>
+        <div>
+          <label>ICT</label>
+          <input type="number" id="ict" placeholder="e.g. 95">
+        </div>
+        <div>
+          <label>PE</label>
+          <input type="number" id="pe" placeholder="e.g. 89">
+        </div>
+      </div>
+
+      <button class="btn" id="calc_btn">Calculate</button>
+
+      <div class="result-box" id="result">Enter grades then press Calculate.</div>
+    </div>
+  </section>
+
+  <py-script src="gwa.py"></py-script>
+</body>
+</html>

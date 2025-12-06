@@ -1,0 +1,219 @@
+:root{
+  --grad-start: #b3d9ff;
+  --grad-end:   #3399ff;
+  --nav-bg: rgba(10, 36, 102, 0.95);
+  --card-bg: rgba(255,255,255,0.92);
+  --accent: #072b66;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html,body{ height:100%; }
+
+body{
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+  /* FIXED FULL BACKGROUND — NO MORE COLOR CHANGE AT BOTTOM */
+  background: linear-gradient(135deg, var(--grad-start), var(--grad-end)) no-repeat fixed;
+  background-size: cover;
+
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color: #072b66;
+}
+
+.container { width: min(1100px, 94%); margin: 0 auto; }
+
+/* ✅ FIXED NAVBAR — NOW VISIBLE */
+.topbar {
+  background: rgba(7, 22, 60, 0.88); /* solid visible dark blue */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.topbar-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:14px 0;
+  width: min(1100px, 94%);
+  margin: 0 auto;
+}
+
+.brand {
+  color: white;
+  font-size:20px;
+  font-weight:800;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+
+.main-nav { display:flex; gap:14px; align-items:center; }
+
+/* ✅ NAV LINKS — FULL WHITE + STRONG VISIBILITY */
+.nav-link {
+  color: #ffffff; /* full white */
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:700;
+  transition: transform .12s ease, background .12s ease;
+}
+
+.nav-link:hover { 
+  transform: translateY(-2px); 
+  background: rgba(255,255,255,0.20);
+}
+
+.nav-link.active { 
+  background: rgba(255,255,255,0.25); 
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12); 
+}
+
+.page {
+  display:flex;
+  justify-content:center;
+  padding:48px 16px;
+  min-height: calc(100vh - 88px);
+}
+
+.card {
+  width: 1000px;
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(7, 22, 60, 0.2);
+  border: 1px solid rgba(7,22,60,0.06);
+}
+
+.card h1 {
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 24px;
+  text-align:center;
+}
+.card h2 {
+  color: var(--accent);
+  margin-bottom:10px;
+}
+
+/* form controls shared */
+label {
+  display:block;
+  color: var(--accent);
+  font-weight:700;
+  margin-bottom:6px;
+  font-size:14px;
+}
+input[type="text"], input[type="number"], select, textarea {
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:2px solid rgba(7,22,60,0.08);
+  margin-bottom:12px;
+  font-family: inherit;
+  font-size:14px;
+  color: #072b66;
+}
+
+/* layout specifics for gwa */
+.grades-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+  margin-top:12px;
+}
+
+/* Buttons */
+.btn {
+  display:inline-block;
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  background: linear-gradient(180deg, #0e3f99, #072b66);
+  color: #fff;
+  font-weight:800;
+  border: none;
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(7,22,60,0.18);
+  transition: transform .12s ease, opacity .12s ease;
+}
+.btn:hover{ transform: translateY(-3px); opacity: .95; }
+
+/* result/info boxes */
+.result-box, .info-box {
+  margin-top:14px;
+  padding:14px;
+  border-radius:8px;
+  background: linear-gradient(180deg, rgba(179,217,255,0.4), rgba(51,153,255,0.06));
+  border-left: 6px solid rgba(7,22,60,0.9);
+  color: #072b66;
+  white-space: pre-line;
+  font-weight:700;
+}
+
+/* HERO for index */
+.hero {
+  padding:48px 0;
+  text-align:center;
+  color: white;
+}
+.hero h1 {
+  font-size:34px;
+  margin-bottom:6px;
+  text-shadow: 0 6px 30px rgba(0,0,0,0.18);
+}
+.hero .subtitle {
+  font-size:15px;
+  opacity:0.95;
+}
+
+/* About text styling on index */
+.about p {
+  color: #042140;
+  line-height:1.6;
+  margin-bottom:12px;
+}
+
+/* footer */
+.footer {
+  text-align:center;
+  padding:18px 0;
+  color: rgba(255,255,255,0.95);
+  font-weight:700;
+  background: linear-gradient(0deg, rgba(0,0,0,0.06), transparent);
+}
+
+/* WHY AIR'S SECTION */
+.why-airs {
+  margin-top: 24px;
+  padding: 18px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.45));
+  box-shadow: 0 10px 30px rgba(7,22,60,0.15);
+  border-left: 6px solid var(--accent);
+}
+
+.why-airs h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+  text-align: center;
+}
+
+.why-airs p {
+  font-size: 15px;
+  color: #042140;
+  line-height: 1.6;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* responsive */
+@media (max-width:640px){
+  .card{ width: 92%; padding:18px; border-radius:12px; }
+  .topbar-inner{ flex-direction: column; gap:8px; align-items:flex-start; padding:12px; }
+  .brand{ font-size:18px; }
+  .grades-grid{ grid-template-columns: 1fr; }
+}
